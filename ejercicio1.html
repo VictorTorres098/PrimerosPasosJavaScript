@@ -1,0 +1,50 @@
+<script>
+    /* 
+    var = a variable global es un variable para todo el programa 
+    si la variable es definida dentro de una funcion esta variable pasaria a ser un variable local
+    .push() agrega elemento al la lista o array
+    .pop() elimina elementos 
+    .shift/() elimina el primer elemento del array
+    .unshift() agrega un elemento al principio del array
+    */
+   var array = [];
+   array.push(12);
+   array.push(53);
+   console.log("Antes: "+ JSON.stringify(array));
+
+   function proximoEnLaFila(arr,elemento){
+        var primerElemento = arr[0];
+        arr.push(elemento);
+        arr.shift();
+        return primerElemento;
+   }
+
+/*    console.log(proximoEnLaFila(array,23), "elemento eliminado");
+   console.log(proximoEnLaFila(array,33),"elemento eliminado"); */
+   /* verifico que fueron eliminados del array */
+   for(var i = 0; i < array.length; i++){
+       console.log(array[i]);
+   }
+
+   /* el metodo shift() tambie retorna el elemento por lo tanto quedaria de la siguiente forma  */
+   function proximoEnLaFilaMejorado(arr, elemento){
+       arr.push(elemento);  //agregar al final del arreglo 
+       return arr.shift();  //remover el primer elemento
+   }
+   proximoEnLaFilaMejorado(array, 44);
+   proximoEnLaFilaMejorado(array, 76);
+
+/*    console.log(proximoEnLaFilaMejorado(array,23), "elemento eliminado");
+   console.log(proximoEnLaFilaMejorado(array,33),"elemento eliminado"); */
+   /* verifico que fueron eliminados del array */
+   for(var i = 0; i < array.length; i++){
+       console.log(array[i]);
+   }
+   /* o tambien mostramos como... */
+   console.log("despues: "+ JSON.stringify(array));
+   
+
+
+
+
+</script>
